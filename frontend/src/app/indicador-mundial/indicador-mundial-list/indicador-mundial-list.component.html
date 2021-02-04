@@ -1,0 +1,88 @@
+<div *ngIf="indicadores.length > 0">
+  <div fxLayout="column" fxFlex="100">
+    <mat-table
+      #table
+      [dataSource]="indicadores"
+      [@animateStagger]="{ value: '50' }"
+      multiTemplateDataRows
+      fxFlex="100"
+    >
+      <!-- ! id data -->
+      <ng-container matColumnDef="data">
+        <mat-header-cell
+          fxLayoutAlign="center center"
+          fxFlex="100"
+          *matHeaderCellDef
+          >Data
+        </mat-header-cell>
+        <mat-cell *matCellDef="let indicador" fxLayoutAlign="center center">
+          <p class="id">
+            {{ indicador.date }}
+          </p>
+        </mat-cell>
+      </ng-container>
+
+      <!-- ! cod_pais Column -->
+      <ng-container matColumnDef="cod_pais">
+        <mat-header-cell
+          fxLayoutAlign="center center"
+          fxFlex="100"
+          *matHeaderCellDef
+          >Cód Pais
+        </mat-header-cell>
+        <mat-cell *matCellDef="let indicador" fxLayoutAlign="center center">
+          <p class="cod_pais text-truncate">
+            {{ indicador.country.id }}
+          </p>
+        </mat-cell>
+      </ng-container>
+
+      <!-- ! nm_pais Column -->
+      <ng-container matColumnDef="nm_pais">
+        <mat-header-cell
+          fxLayoutAlign="center center"
+          fxFlex="100"
+          *matHeaderCellDef
+          >Pais
+        </mat-header-cell>
+        <mat-cell *matCellDef="let indicador" fxLayoutAlign="center center">
+          <p class="nm_pais text-truncate">
+            {{ indicador.country.value }}
+          </p>
+        </mat-cell>
+      </ng-container>
+
+      <!-- ! value Column -->
+      <ng-container matColumnDef="value">
+        <mat-header-cell
+          fxLayoutAlign="center center"
+          fxFlex="100"
+          *matHeaderCellDef
+          >Valor
+        </mat-header-cell>
+        <mat-cell *matCellDef="let indicador" fxLayoutAlign="center center">
+          <p class="value text-truncate">
+            {{ indicador.value == null ? '-' : indicador.value }}
+          </p>
+        </mat-cell>
+      </ng-container>
+
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row
+        *matRowDef="let indicador; columns: displayedColumns"
+        class="indicador"
+        [@animate]="{ value: '*', params: { y: '100%' } }"
+      >
+      </mat-row>
+    </mat-table>
+    <mat-paginator
+      #paginator
+      [length]="length"
+      [pageSize]="pageSize"
+      [pageSizeOptions]="pageSizeOptions"
+      (page)="paginationServerSide($event)"
+      showFirstLastButtons
+    >
+    </mat-paginator>
+  </div>
+</div>

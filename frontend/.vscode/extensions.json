@@ -1,0 +1,17 @@
+{
+  "recommendations": [
+    "PKief.material-icon-theme",
+    "humao.rest-client",
+    "aaron-bond.better-comments",
+    "christian-kohler.path-intellisense",
+    "CoenraadS.bracket-pair-colorizer",
+    "dbaeumer.vscode-eslint",
+    "eamodio.gitlens",
+    "hookyqr.beautify",
+    "esbenp.prettier-vscode",
+    "equinusocio.vsc-material-theme",
+    "msjsdiag.debugger-for-chrome",
+    "sonarsource.sonarlint-vscode",
+    "calebporzio.simple-php-cs-fixer"
+  ]
+}

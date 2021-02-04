@@ -1,0 +1,16 @@
+<div fxLayout="column">
+  <span fxLayout="row wrap" fxFlex="100" fxLayoutAlign="center center">
+    <h1>Consulta Indicador</h1>
+  </span>
+  <div fxLayout="row wrap" fxLayoutAlign="center center">
+    <mat-card fxFlex="70" fxFlex.xs="100" [@animateStagger]="{ value: '50' }">
+      <app-indicador-mundial-form></app-indicador-mundial-form>
+    </mat-card>
+  </div>
+  <p></p>
+  <div fxLayout="row wrap" fxLayoutAlign="center center" *ngIf="showListIndicadores">
+    <mat-card fxFlex="70" fxFlex.xs="100" [@animateStagger]="{ value: '50' }">
+      <app-indicador-mundial-list></app-indicador-mundial-list>
+    </mat-card>
+  </div>
+</div>

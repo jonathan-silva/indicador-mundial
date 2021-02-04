@@ -1,0 +1,33 @@
+<div fxFlex="100" fxLayout="column">
+  <form [formGroup]="indicadorForm">
+    <div>
+      <mat-form-field appearance="outline" fxFlex="100">
+        <mat-label>Codigo Pais</mat-label>
+        <input
+          matInput
+          formControlName="cod_pais"
+          #input
+          [value]="input.value.toUpperCase()"
+          type="text"
+          placeholder="Digite o código do pais"
+        />
+        <mat-error>Por favor, informe um codigo valido.</mat-error>
+      </mat-form-field>
+    </div>
+    <div fxLayoutAlign="center center">
+      <button
+        class="save-button mat-primary"
+        mat-raised-button
+        aria-label="CONSULTAR"
+        fxFlex="30"
+        fxFlex.xs="100"
+        fxFlex.sm="50"
+        (click)="pesquisaCodPais()"
+        [disabled]="indicadorForm.invalid"
+      >
+        <mat-icon>save</mat-icon>
+        SALVAR
+      </button>
+    </div>
+  </form>
+</div>
