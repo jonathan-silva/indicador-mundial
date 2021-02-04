@@ -35,8 +35,8 @@ export class IndicadorMundialService {
     page?: string,
     perPage?: string
   ): Promise<any> {
-    page = page == undefined ? '1' : page;
-    perPage = perPage == undefined ? '5' : perPage;
+    page = page === undefined ? '1' : page;
+    perPage = perPage === undefined ? '5' : perPage;
     return new Promise((resolve) => {
       this._httpClient
         .get(

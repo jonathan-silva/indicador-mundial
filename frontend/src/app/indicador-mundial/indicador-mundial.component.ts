@@ -14,19 +14,18 @@ export class IndicadorMundialComponent implements OnInit, OnDestroy {
   private readonly _unsubscribeAll: Subject<any>;
   showListIndicadores = false;
 
-  constructor(
-    private readonly _indicadorService: IndicadorMundialService
-  ) {
+  constructor(private readonly _indicadorService: IndicadorMundialService) {
     this._unsubscribeAll = new Subject();
   }
 
   ngOnInit(): void {
     this._indicadorService.onIndicadorChanged
-    .pipe(takeUntil(this._unsubscribeAll))
-    .subscribe((response) => {
-      if(response.length >= 1) return this.showListIndicadores = true;
-    });
-  
+      .pipe(takeUntil(this._unsubscribeAll))
+      .subscribe((response) => {
+        if (response.length >= 1) {
+          return (this.showListIndicadores = true);
+        }
+      });
   }
 
   ngOnDestroy(): void {
