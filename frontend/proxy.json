@@ -1,6 +1,6 @@
 {
   "/api/*": {
-    "target": "http://localhost:8080/quarkus",
+    "target": "http://quarkus:8080/quarkus",
     "secure": false,
     "logLevel": "debug",
     "changeOrigin": true,
@@ -9,7 +9,7 @@
     }
   },
   "/quarkus/*": {
-    "target": "http://localhost:8080/quarkus",
+    "target": "http://quarkus:8080/quarkus",
     "secure": false,
     "logLevel": "debug",
     "changeOrigin": true,

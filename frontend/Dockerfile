@@ -1,14 +1,19 @@
-FROM nginx
+FROM node:14.2.0
 
-# Configurando o timezone do servidor
-ENV TZ="America/Sao_Paulo"
-RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+# Instalacao do Chrome para testes do app
+RUN wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add -
+RUN sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
+RUN apt-get update && apt-get install -yq google-chrome-stable
 
-COPY ./docker/default.conf /etc/nginx/conf.d/
-COPY ./docker/proxy.conf /etc/nginx/
-COPY ./docker/env.sh /etc/nginx/
-RUN tar czvf dist.tar.gz ./dist/*
+# Diretorio da app
+WORKDIR /app
 
-CMD ["sh", "-c", "/etc/nginx/env.sh ; nginx -g 'daemon off;'"]
+ENV PATH /app/node_modules/.bin:$PATH
 
-ADD  dist.tar.gz /usr/share/nginx/html/
+COPY package.json /app/package.json
+RUN npm install --quiet
+
+COPY . /app
+
+# start app
+CMD npm run start

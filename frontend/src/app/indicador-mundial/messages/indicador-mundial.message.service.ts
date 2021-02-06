@@ -36,4 +36,19 @@ export class IndicadorMundialMessageService {
       showConfirmButton: false,
     });
   }
+
+  /**
+   * @description Servico indisponivel
+   * @return {void}
+   */
+  indicadorErroServicoIndisponivel(): void {
+    Swal.fire({
+      title: 'Ops!',
+      text: 'Serviço indisponível no momento, tente novamente mais tarde.',
+      type: 'error',
+      timer: 3000,
+      showCancelButton: false,
+      showConfirmButton: false,
+    });
+  }
 }

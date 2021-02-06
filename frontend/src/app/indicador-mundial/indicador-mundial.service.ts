@@ -48,7 +48,11 @@ export class IndicadorMundialService {
         },
         (error: HttpErrorResponse) => {
           this._ngxLoader.stopAll();
-          this._messageIndicadorMundial.indicadorErroNaoEncontrado(error.error);
+          if(error.status === 504) {
+            this._messageIndicadorMundial.indicadorErroServicoIndisponivel();
+          } else {
+            this._messageIndicadorMundial.indicadorErroNaoEncontrado(error.error);
+          }
         });
     });
   }

@@ -1,0 +1,45 @@
+version: "3.7"
+
+x-common-variables: &common-variables
+  QUARKUS_PORT: 9000
+  QUARKUS_PATH_API: /quarkus
+  QUARKUS_SWAGGER_PATH: /swagger-ui
+  QUARKUS_VALIDATOR_SWAGGER_URL: localhost:4200
+
+services:
+  back:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile.jvm
+    container_name: back
+    hostname: quarkus
+    restart: unless-stopped
+    tty: true
+    ports:
+      - "9000:9000"
+    environment:
+      <<: *common-variables
+    networks:
+      - app
+
+  front:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: front
+    hostname: angular
+    tty: true
+    ports:
+      - "4200:4200"
+    links:
+      - back  
+    depends_on:
+      - back
+    volumes:
+      - './frontend:/app'
+      - './frontend/node_modules'
+    networks:
+      - app
+
+networks:
+  app:

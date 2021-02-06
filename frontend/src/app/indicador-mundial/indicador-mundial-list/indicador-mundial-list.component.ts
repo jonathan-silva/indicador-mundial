@@ -84,6 +84,7 @@ export class IndicadorMundialListComponent implements OnInit, OnDestroy {
     this.indicadorFilter.nextPageIndex = event.pageIndex + 1;
     this.indicadorFilter.previousPageIndex = event.previousPageIndex + 1;
     this.indicadorFilter.current_page = event.pageIndex + 1;
+    this._ngxLoader.start();
     this._indicadorService.getIndicators(
       'BR',
       this.indicadorFilter.current_page,

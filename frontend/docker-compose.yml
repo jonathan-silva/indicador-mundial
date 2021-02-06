@@ -1,0 +1,14 @@
+version: "3.4"
+
+services:
+  front:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    container_name: angular
+    tty: true
+    ports:
+      - "4200:4200"
+    volumes:
+      - '.:/app'
+      - '/app/node_modules'
