@@ -30,8 +30,9 @@
     "core-js": "^2.4.1",
     "express": "^4.16.2",
     "moment": "^2.22.2",
-    "sweetalert2": "8.14.0",
+    "ngx-ui-loader": "^10.0.0",
     "rxjs": "6.5.4",
+    "sweetalert2": "8.14.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.3"
   },

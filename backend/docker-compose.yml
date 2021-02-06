@@ -6,20 +6,19 @@ x-common-variables: &common-variables
   POSTGRES_PASSWORD: app
 
 services:
-
-  postgres:
-    image: postgres:12.4
-    container_name: quarkus-postgres
+  app:
+    build:
+      context: ./
+      dockerfile: Dockerfile.jvm
+    container_name: indicador-mundial
     restart: unless-stopped
     tty: true
     ports:
-      - "5432:5432"
+      - "8080:8080"
     environment:
       <<: *common-variables
-    volumes:
-      - ./banco-local/:/var/lib/postgresql/data
     networks:
-      - db
+      - app
 
 networks:
-  db:
+  app:

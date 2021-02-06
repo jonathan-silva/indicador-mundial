@@ -1,11 +1,20 @@
 {
   "/api/*": {
-    "target": "http://localhost:8080/desafio-calc",
+    "target": "http://localhost:8080/quarkus",
     "secure": false,
     "logLevel": "debug",
     "changeOrigin": true,
     "pathRewrite": {
       "^/api/*": ""
+    }
+  },
+  "/quarkus/*": {
+    "target": "http://localhost:8080/quarkus",
+    "secure": false,
+    "logLevel": "debug",
+    "changeOrigin": true,
+    "pathRewrite": {
+      "^/quarkus/*": ""
     }
   }
 }

@@ -26,12 +26,12 @@ export class IndicadorMundialMessageService {
    * @description Retorno generico de Erro do backend
    * @return {void}
    */
-  indicadorErroNaoEncontrado(): void {
+  indicadorErroNaoEncontrado(msg: string): void {
     Swal.fire({
       title: 'Ops!',
-      text: 'Nenhum registro encontrado.',
+      text: msg,
       type: 'error',
-      timer: 4000,
+      timer: 3000,
       showCancelButton: false,
       showConfirmButton: false,
     });

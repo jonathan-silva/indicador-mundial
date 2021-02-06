@@ -73,7 +73,7 @@ const dutchRangeLabel = (page: number, pageSize: number, length: number) => {
     MatSelectModule,
     MatDatepickerModule,
     MatMomentDateModule,
-    ReactiveFormsModule,
+    ReactiveFormsModule
   ],
   exports: [
     FlexLayoutModule,
@@ -106,7 +106,7 @@ const dutchRangeLabel = (page: number, pageSize: number, length: number) => {
     MatSelectModule,
     MatDatepickerModule,
     MatMomentDateModule,
-    ReactiveFormsModule,
+    ReactiveFormsModule
   ],
   providers: [{ provide: MatPaginatorIntl, useValue: getDutchPaginatorIntl() }],
 })

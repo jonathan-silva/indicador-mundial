@@ -1,5 +1,6 @@
 import { Component, OnDestroy, OnInit, ViewEncapsulation } from '@angular/core';
 import { PageEvent } from '@angular/material/paginator';
+import { NgxUiLoaderService } from 'ngx-ui-loader';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 import { coreAnimations } from '../../shared/animations';
@@ -27,7 +28,9 @@ export class IndicadorMundialListComponent implements OnInit, OnDestroy {
 
   public indicadorFilter: any = {};
 
-  constructor(private readonly _indicadorService: IndicadorMundialService) {
+  constructor(
+    private readonly _ngxLoader: NgxUiLoaderService,
+    private readonly _indicadorService: IndicadorMundialService) {
     this._unsubscribeAll = new Subject();
   }
 
@@ -68,6 +71,7 @@ export class IndicadorMundialListComponent implements OnInit, OnDestroy {
     this.indicadores = indicadoresList.map((indicador) => {
       return new IndicadorMundial(indicador);
     });
+    this._ngxLoader.stopAll();
     return this.indicadores;
   }
 

@@ -1,5 +1,6 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse, HttpResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { NgxUiLoaderService } from 'ngx-ui-loader';
 import { BehaviorSubject } from 'rxjs';
 import { environment } from '../../environments/environment';
 import { IndicadorMundial } from './indicador-mundial.model';
@@ -9,24 +10,20 @@ import { IndicadorMundialMessageService } from './messages/indicador-mundial.mes
   providedIn: 'root',
 })
 export class IndicadorMundialService {
-  private readonly _restService = `${environment.urlApi}`;
+  private readonly _restService = `${environment.urlApi}/world-bank/`;
 
   onIndicadorChanged: BehaviorSubject<any>;
   indicadores: IndicadorMundial[] = [];
   constructor(
     private readonly _httpClient: HttpClient,
+    private readonly _ngxLoader: NgxUiLoaderService,
     private readonly _messageIndicadorMundial: IndicadorMundialMessageService
   ) {
     this.onIndicadorChanged = new BehaviorSubject([]);
   }
 
-  onChangePessoa(response: any): any {
-    this.indicadores.push(response);
-    this.onIndicadorChanged.next(this.indicadores);
-  }
-
   /**
-   * @description Visualizar Pessoas
+   * @description Busca lista paginada de indices do pais informado
    * @method GET
    * @returns {Promise} Promise
    */
@@ -40,16 +37,18 @@ export class IndicadorMundialService {
     return new Promise((resolve) => {
       this._httpClient
         .get(
-          `${this._restService}${codPais}/indicator/SI.POV.DDAY?page=${page}&per_page=${perPage}&format=json`
+          `${this._restService}${codPais}?format=json&page=${page}&per_page=${perPage}`
         )
-        .subscribe((response: any) => {
-          if (response[0].message) {
-            this._messageIndicadorMundial.indicadorErroNaoEncontrado();
-          } else {
-            this.indicadores = response;
-            this.onIndicadorChanged.next(this.indicadores);
-          }
+        .subscribe((response: HttpResponse<any>) => {
+          let callBack: any;
+          callBack = response;
+          this.indicadores = callBack;
+          this.onIndicadorChanged.next(this.indicadores);
           resolve(response);
+        },
+        (error: HttpErrorResponse) => {
+          this._ngxLoader.stopAll();
+          this._messageIndicadorMundial.indicadorErroNaoEncontrado(error.error);
         });
     });
   }

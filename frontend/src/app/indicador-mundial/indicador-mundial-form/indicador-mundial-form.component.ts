@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { NgxUiLoaderService } from 'ngx-ui-loader';
 import { coreAnimations } from '../../shared/animations';
 import { IndicadorMundialService } from '../indicador-mundial.service';
 
@@ -15,6 +16,7 @@ export class IndicadorMundialFormComponent implements OnInit {
 
   constructor(
     private readonly _formBuilder: FormBuilder,
+    private readonly _ngxLoader: NgxUiLoaderService,
     private readonly _indicadorService: IndicadorMundialService
   ) {
     this.indicadorForm = this.createIndicadorForm();
@@ -32,8 +34,10 @@ export class IndicadorMundialFormComponent implements OnInit {
   }
 
   pesquisaCodPais(): void {
+    this._ngxLoader.start();
     this._indicadorService.getIndicators(
       this.indicadorForm.getRawValue().cod_pais
     );
+    this.indicadorForm.reset();
   }
 }
