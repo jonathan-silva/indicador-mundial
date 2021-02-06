@@ -1,0 +1,25 @@
+version: "3.4"
+
+x-common-variables: &common-variables
+  POSTGRES_DB: app
+  POSTGRES_USER: app
+  POSTGRES_PASSWORD: app
+
+services:
+
+  postgres:
+    image: postgres:12.4
+    container_name: quarkus-postgres
+    restart: unless-stopped
+    tty: true
+    ports:
+      - "5432:5432"
+    environment:
+      <<: *common-variables
+    volumes:
+      - ./banco-local/:/var/lib/postgresql/data
+    networks:
+      - db
+
+networks:
+  db:

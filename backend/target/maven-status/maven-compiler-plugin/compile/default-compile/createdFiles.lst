@@ -1,0 +1,5 @@
+org/poc/restclient/MainApplication.class
+META-INF/panache-archive.marker
+org/poc/restclient/worldbank/WorldBankResource.class
+org/poc/restclient/worldbank/WorldBankConstant.class
+org/poc/restclient/worldbank/WorldBankService.class
