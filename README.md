@@ -16,6 +16,8 @@ o container do frontend, e backend.
 docker-compose up --build
 ```
 
+
+
 ## Angular (frontend)
 
 Para acessar aplicação web, acesse usando browser de sua preferência o endereço.
