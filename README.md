@@ -79,6 +79,7 @@ Efetuando algumas consultas no frontend temos a funcionalidade de acordo como fo
 ![plot](./imagens/image6.png)
 
 Foram adicionados alguns testes sendo eles: componente, html, dialogs, e requisições para fins de exemplo.
+
 Aplicação contém exemplos de: animações de pesquisa, loading de tela e consulta, paginação, tratamento de erros, e entre outros.
 
 ![plot](./imagens/image7.png)
