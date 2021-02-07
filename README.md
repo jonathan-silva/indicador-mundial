@@ -26,11 +26,11 @@ docker-compose up --build app
 
 ![plot](./imagens/image2.png)
 
-Quando finalizado, pode prosseguir com outros passos.
+Após executar o procedimento, pode prosseguir com outros passos.
 
 ## Angular (frontend)
 
-Para acessar aplicação web, acesse usando browser de sua preferência o endereço.
+Utilizando browser de sua preferência, acesse o endereço.
 
 ```
 http://localhost:4200
@@ -76,11 +76,10 @@ Efetuando algumas consultas no frontend temos a funcionalidade de acordo como fo
 
 ![plot](./imagens/image5.png)
 
-Que a mesma tem animações de pesquisa, loading de tela e consulta, paginação, tratamento de erros, e outros.
-
 ![plot](./imagens/image6.png)
 
-Foi adicionado alguns testes, teste de componente, html, dialogs, e requisições só para exemplo.
+Foram adicionados alguns testes sendo eles: componente, html, dialogs, e requisições para fins de exemplo.
+Aplicação contém exemplos de: animações de pesquisa, loading de tela e consulta, paginação, tratamento de erros, e entre outros.
 
 ![plot](./imagens/image7.png)
 Foi passado aplicação no Code Quality também (Sonar) para demonstração.
