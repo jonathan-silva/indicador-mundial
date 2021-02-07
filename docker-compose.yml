@@ -1,12 +1,18 @@
 version: "3.7"
 
 x-common-variables: &common-variables
-  QUARKUS_PORT: 9000
+  QUARKUS_PORT: 8080
   QUARKUS_PATH_API: /quarkus
   QUARKUS_SWAGGER_PATH: /swagger-ui
   QUARKUS_VALIDATOR_SWAGGER_URL: localhost:4200
 
 services:
+  maven:
+    image: maven:3.6.3-jdk-11
+    command: mvn clean install
+    volumes:
+      - ./backend:/usr/src/backend:rw
+    working_dir: /usr/src/backend
   back:
     build:
       context: ./backend
@@ -22,11 +28,11 @@ services:
     networks:
       - app
 
-  front:
+  app:
     build:
       context: ./frontend
       dockerfile: Dockerfile
-    container_name: front
+    container_name: app
     hostname: angular
     tty: true
     ports:

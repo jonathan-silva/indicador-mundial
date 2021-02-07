@@ -1,14 +1,19 @@
-version: "3.4"
+version: '3.7'
 
 services:
-  front:
+  app:
     build:
       context: ./
       dockerfile: Dockerfile
-    container_name: angular
+    container_name: app
+    hostname: angular
     tty: true
     ports:
-      - "4200:4200"
+      - '4200:4200'
     volumes:
       - '.:/app'
-      - '/app/node_modules'
+      - './app/node_modules'
+    networks:
+      - app
+networks:
+  app:

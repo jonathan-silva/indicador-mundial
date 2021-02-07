@@ -9,11 +9,17 @@ Ferramentas utilizadas:
 
 ## Startando aplicação
 
+Primeiramente instalação das dependências maven com o comando abaixo:
+
+```bash
+docker-compose up --build maven
+```
+
 No diretório raiz do repositorio contém um arquivo `docker-compose.yml`, execute o comando abaixo, que automaticamente irá levantar
 o container do frontend, e backend.
 
 ```bash
-docker-compose up --build
+docker-compose up --build app
 ```
 
 ![plot](./imagens/image1.png)
