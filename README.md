@@ -82,6 +82,11 @@ Foi passado aplicação no Code Quality também (Sonar) para demonstração.
 Usando o perfil que contém 134 regras de TypeScript.
 
 ## Quarkus (backend)
+Instalação das dependências maven:
+
+```
+./mvnw clean install
+```
 
 Para acessar a documentação de API's(Swagger) do microserviço, acesse no browser a url:
 
