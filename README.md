@@ -1,11 +1,11 @@
-## Indicador Mundial
+## Indicador Histórico de Pobreza Mundial
 
 Branch => **master**
 
 Ferramentas utilizadas:
 
 1. FrontEnd Angular=> **v11**
-2. Quarkus => **v1.11.1.Final**
+2. BackEnd Quarkus => **v1.11.1.Final**
 
 ## Startando aplicação
 
