@@ -7,9 +7,9 @@ Ferramentas utilizadas:
 1. FrontEnd Angular=> **v11**
 2. BackEnd Quarkus => **v1.11.1.Final**
 
-## Startando aplicação
+## Iniciando aplicação
 
-Primeiramente instalação das dependências maven com o comando abaixo:
+Primeiramente, deve-se realizar a instalação das dependências maven com o comando abaixo:
 
 ```bash
 docker-compose up --build maven
