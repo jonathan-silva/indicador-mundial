@@ -40,7 +40,7 @@ http://localhost:4200
 
 Com layout bem simples conseguimos testar algumas funcionalidades, e integrações com serviço.
 
-Está sendo utilizando um proxy reverso entre FrontEnd e Quarkus,
+Está sendo utilizando um proxy reverso entre FrontEnd e BackEnd,
 o mesmo está dentro do diretório `frontend/proxy.json`.
 
 ```json
