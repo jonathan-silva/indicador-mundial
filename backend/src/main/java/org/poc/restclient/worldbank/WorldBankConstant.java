@@ -1,6 +1,9 @@
 package org.poc.restclient.worldbank;
 
 public final class WorldBankConstant {
+
+    private WorldBankConstant() { }
+
     public static final String GET_COD_PAIS = "Pesquisa pelo codigo do pais, e retorna os índices históricos de pobreza referente ao país.";
     public static final String GET_COD_PAIS_STATUS_NOT_FOUND = "Não foi encontrado o código do pais informado";
     public static final String GET_COD_PAIS_STATUS_OK = "Sucesso!";

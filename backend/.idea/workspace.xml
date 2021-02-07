@@ -5,7 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="63d673c4-4677-4030-9c6f-20c9385257a7" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../frontend/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/MainApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/poc/MainApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/poc/restclient/worldbank/WorldBankConstant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/poc/restclient/worldbank/WorldBankConstant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/poc/restclient/worldbank/WorldBankResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/poc/restclient/worldbank/WorldBankResource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/poc/restclient/worldbank/WorldBankService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/poc/restclient/worldbank/WorldBankService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/app/indicador-mundial/indicador-mundial-form/indicador-mundial-form.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/indicador-mundial/indicador-mundial-form/indicador-mundial-form.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/app/indicador-mundial/indicador-mundial-form/indicador-mundial-form.component.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/app/indicador-mundial/indicador-mundial-form/indicador-mundial-form.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/indicador-mundial/indicador-mundial-form/indicador-mundial-form.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/app/indicador-mundial/indicador-mundial-list/indicador-mundial-list.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/indicador-mundial/indicador-mundial-list/indicador-mundial-list.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/app/indicador-mundial/indicador-mundial-list/indicador-mundial-list.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/indicador-mundial/indicador-mundial-list/indicador-mundial-list.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/app/indicador-mundial/indicador-mundial.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/indicador-mundial/indicador-mundial.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/app/indicador-mundial/indicador-mundial.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/indicador-mundial/indicador-mundial.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/app/indicador-mundial/indicador-mundial.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/indicador-mundial/indicador-mundial.service.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,6 +32,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -32,16 +49,24 @@
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="restartRequiresConfirmation" value="false" />
   </component>
   <component name="RecentsManager">
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="org.poc" />
+      <recent name="org.poc.restclient.worldbank" />
     </key>
   </component>
   <component name="RunAnythingCache">
@@ -49,7 +74,18 @@
       <command value="mvn -s ./servico-b/pom clean install" />
       <command value="mvn compile" />
       <command value="mvn compile quarkus:dev" />
+      <command value="mvn sonar:sonar" />
+      <command value="mvn sonar:sonar -Dsonar.host.url=http://localhost:9000 -Dsonar.login=511afd09a223c2baa8491775c66a762bc2d6e833 -Dsonar.languages=java" />
+      <command value="mvn sonar:sonar -Dsonar.projectName=indicador-mundial-backend -Dsonar.projectKey=indicador-mundial-backend -Dsonar.host.url=http://localhost:9000 -Dsonar.login=511afd09a223c2baa8491775c66a762bc2d6e833 -Dsonar.languages=java" />
+      <command value="./mvnw clean test" />
+      <command value="mvn clean verify" />
+      <command value="mvn clean package jacoco:report" />
+      <command value="mvn test" />
+      <command value="mvn package jacoco:report" />
+      <command value="mvn package jacoco:report sonar:sonar -Dsonar.projectName=indicador-mundial-backend -Dsonar.projectKey=indicador-mundial-backend -Dsonar.host.url=http://localhost:9000 -Dsonar.login=511afd09a223c2baa8491775c66a762bc2d6e833 -Dsonar.languages=java" />
+      <command value="mvn clean test" />
       <command value="mvn clean install" />
+      <command value="mvn package jacoco:report sonar:sonar -Dsonar.projectName=indicador-mundial-backend -Dsonar.projectKey=indicador-mundial-backend -Dsonar.host.url=http://localhost:9000 -Dsonar.login=511afd09a223c2baa8491775c66a762bc2d6e833 -Dsonar.languages=java -Dsonar.groovy.jacoco.reportPath=target/jacoco.exec" />
     </option>
   </component>
   <component name="RunDashboard">
@@ -59,9 +95,9 @@
       </set>
     </option>
   </component>
-  <component name="RunManager">
-    <configuration name="indicador-mundial" type="QuarkusRunConfigurationType" factoryName="Quarkus">
-      <module name="backend" />
+  <component name="RunManager" selected="Quarkus.indicador-mundial">
+    <configuration name="indicador-mundial (1)" type="QuarkusRunConfigurationType" factoryName="Quarkus">
+      <module name="indicador-mundial" />
       <QsMavenRunConfiguration>
         <MavenSettings>
           <option name="myGeneralSettings" />
@@ -72,9 +108,7 @@
                 <set />
               </option>
               <option name="goals">
-                <list>
-                  <option value="quarkus:dev" />
-                </list>
+                <list />
               </option>
               <option name="pomFileName" value="pom.xml" />
               <option name="profilesMap">
@@ -86,6 +120,12 @@
           </option>
         </MavenSettings>
       </QsMavenRunConfiguration>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="indicador-mundial" type="QuarkusRunConfigurationType" factoryName="Quarkus">
+      <module name="backend" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -103,6 +143,8 @@
       <workItem from="1612471638478" duration="150000" />
       <workItem from="1612633252360" duration="2548000" />
       <workItem from="1612637942166" duration="897000" />
+      <workItem from="1612651621425" duration="4171000" />
+      <workItem from="1612656401699" duration="469000" />
     </task>
     <servers />
   </component>

@@ -10,7 +10,7 @@ import javax.inject.Inject;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
-import java.util.ArrayList;
+import java.util.List;
 
 @Path("/world-bank")
 @Tag(name = "world-bank")
@@ -27,10 +27,10 @@ public class WorldBankResource {
     @Tag(name="world-bank")
     @APIResponse(responseCode = "404", description = WorldBankConstant.GET_COD_PAIS_STATUS_NOT_FOUND)
     @APIResponse(responseCode = "200", description = WorldBankConstant.GET_COD_PAIS_STATUS_OK)
-    public Response findByCdPaisPaginator(@PathParam("cod_pais") String cod_pais, @QueryParam("page") String page, @QueryParam("per_page") String perPage, @QueryParam("format") String format)
+    public Response findByCdPaisPaginator(@PathParam("cod_pais") String codPais, @QueryParam("page") String page, @QueryParam("per_page") String perPage, @QueryParam("format") String format)
     {
-        this.checkParamsWorldBank(cod_pais, page, perPage, format);
-        ArrayList<Object> callback = worldBankService.findByCdPaisPaginator(cod_pais, page, perPage, format);
+        this.checkParamsWorldBank(codPais, page, perPage, format);
+        List<Object> callback = worldBankService.findByCdPaisPaginator(codPais, page, perPage, format);
         if(callback.isEmpty()) {
             return Response.status(Response.Status.NOT_FOUND).build();
         }
@@ -41,8 +41,8 @@ public class WorldBankResource {
     }
 
     @Description(WorldBankConstant.DESCRIPTION_CHECK_PARAMS_NOT_NULL)
-    public void checkParamsWorldBank(String cod_pais, String page, String perPage, String format) {
-        if (cod_pais == null || page == null || perPage == null || format == null) {
+    public void checkParamsWorldBank(String codPais, String page, String perPage, String format) {
+        if (codPais == null || page == null || perPage == null || format == null) {
             throw new WebApplicationException(
                     Response.status(Response.Status.BAD_REQUEST)
                             .entity(WorldBankConstant.PARAMS_REQUIRED)

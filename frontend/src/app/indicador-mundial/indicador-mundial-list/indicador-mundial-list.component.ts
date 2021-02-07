@@ -30,12 +30,13 @@ export class IndicadorMundialListComponent implements OnInit, OnDestroy {
 
   constructor(
     private readonly _ngxLoader: NgxUiLoaderService,
-    private readonly _indicadorService: IndicadorMundialService) {
+    private readonly _indicadorService: IndicadorMundialService
+  ) {
     this._unsubscribeAll = new Subject();
   }
 
   ngOnInit(): void {
-    this.onChangePessoa();
+    this.onChangeIndicador();
   }
 
   ngOnDestroy(): void {
@@ -47,12 +48,12 @@ export class IndicadorMundialListComponent implements OnInit, OnDestroy {
    * @description Busca indicadores no datasource da service
    * @returns {void} void
    */
-  onChangePessoa(): void {
+  onChangeIndicador(): void {
     this._indicadorService.onIndicadorChanged
       .pipe(takeUntil(this._unsubscribeAll))
       .subscribe((response) => {
         this.indicadores = response;
-        this.length = response[0].total;
+        this.length = response[0].total === undefined ? 0 : response[0].total;
         if (this.indicadores[1].length !== 0) {
           this.checkList(this.indicadores[1]);
         }

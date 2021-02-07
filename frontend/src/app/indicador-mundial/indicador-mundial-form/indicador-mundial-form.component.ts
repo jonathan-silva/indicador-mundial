@@ -7,7 +7,6 @@ import { IndicadorMundialService } from '../indicador-mundial.service';
 @Component({
   selector: 'app-indicador-mundial-form',
   templateUrl: './indicador-mundial-form.component.html',
-  styleUrls: ['./indicador-mundial-form.component.scss'],
   encapsulation: ViewEncapsulation.None,
   animations: coreAnimations,
 })
@@ -28,7 +27,7 @@ export class IndicadorMundialFormComponent implements OnInit {
     return this._formBuilder.group({
       cod_pais: [
         '',
-        [Validators.required, Validators.maxLength(2), Validators.minLength(2)],
+        [Validators.required, Validators.maxLength(3), Validators.minLength(2)],
       ],
     });
   }

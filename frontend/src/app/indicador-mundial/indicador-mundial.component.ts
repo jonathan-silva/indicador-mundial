@@ -23,7 +23,7 @@ export class IndicadorMundialComponent implements OnInit, OnDestroy {
       .pipe(takeUntil(this._unsubscribeAll))
       .subscribe((response) => {
         if (response.length >= 1) {
-          return (this.showListIndicadores = true);
+          this.showListIndicadores = true;
         }
       });
   }

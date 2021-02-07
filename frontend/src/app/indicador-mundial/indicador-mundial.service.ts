@@ -1,4 +1,8 @@
-import { HttpClient, HttpErrorResponse, HttpResponse } from '@angular/common/http';
+import {
+  HttpClient,
+  HttpErrorResponse,
+  HttpResponse,
+} from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { NgxUiLoaderService } from 'ngx-ui-loader';
 import { BehaviorSubject } from 'rxjs';
@@ -10,7 +14,7 @@ import { IndicadorMundialMessageService } from './messages/indicador-mundial.mes
   providedIn: 'root',
 })
 export class IndicadorMundialService {
-  private readonly _restService = `${environment.urlApi}/world-bank/`;
+  public readonly _restService = `${environment.urlApi}/world-bank/`;
 
   onIndicadorChanged: BehaviorSubject<any>;
   indicadores: IndicadorMundial[] = [];
@@ -39,21 +43,24 @@ export class IndicadorMundialService {
         .get(
           `${this._restService}${codPais}?format=json&page=${page}&per_page=${perPage}`
         )
-        .subscribe((response: HttpResponse<any>) => {
-          let callBack: any;
-          callBack = response;
-          this.indicadores = callBack;
-          this.onIndicadorChanged.next(this.indicadores);
-          resolve(response);
-        },
-        (error: HttpErrorResponse) => {
-          this._ngxLoader.stopAll();
-          if(error.status === 504) {
-            this._messageIndicadorMundial.indicadorErroServicoIndisponivel();
-          } else {
-            this._messageIndicadorMundial.indicadorErroNaoEncontrado(error.error);
+        .subscribe(
+          (response: HttpResponse<any>) => {
+            const callBack: any = response;
+            this.indicadores = callBack;
+            this.onIndicadorChanged.next(this.indicadores);
+            resolve(response);
+          },
+          (error: HttpErrorResponse) => {
+            this._ngxLoader.stopAll();
+            if (error.status === 504) {
+              this._messageIndicadorMundial.indicadorErroServicoIndisponivel();
+            } else {
+              this._messageIndicadorMundial.indicadorErroNaoEncontrado(
+                error.error
+              );
+            }
           }
-        });
+        );
     });
   }
 }
